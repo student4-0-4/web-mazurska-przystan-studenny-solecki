@@ -1,35 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC = () => {
+  //  const [imie, setImie] = useState<string>('');
+  //  const [sprzet, setSprzet] = useState<string>('kajak');
+  //  const [godziny, setGodziny] = useState<number>(1);
+  //  const [kapok, setKapok] = useState<boolean>(false);
+//    const [instruktor, setInstruktor] = useState<boolean>(false);
+ //   const [platnosc, setPlatnosc] = useState<string>('karta');
+// const [regulamin, setRegulamin] = useState<boolean>(false);
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    const ceny: Record<string, number> = {
+        kajak: 20,
+        rower: 35,
+        omega: 150
+    };
 
-export default App
+    const liczCene = (): number => {
+        let suma = ceny[sprzet] * godziny;
+        if (instruktor) suma += 50 * godziny;
+        if (kapok) suma += 5;
+        return suma;
+    };
+
+    return (
+
+        <div className="kontener">
+            <h1>Mazurska Przystań</h1>
+            <div className="formularz">
+
+
+
+                {sprzet === 'omega' && <p className="alert">Wymagany patent żeglarski!</p>}
+
+                <label>Czas wynajmu: {godziny}h</label>
+
+
+                <h2 className="wynik">{`Suma: ${liczCene()} zł`}</h2>
+
+                <button disabled={!regulamin || imie.length < 3}>
+                    Zarezerwuj dla: {imie || "..."}
+                </button>
+            </div>
+        </div>
+    );
+};
+
+export default App;
