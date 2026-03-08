@@ -1,42 +1,92 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+    --ocean-blue: #13599e;
+    --light-grey: #f4f4f4;
+    --dark-navy: #2c3e50;
+    --white: #ffffff;
+    --warning: #e74c3c;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+    background-color: #1968ac; /* Delikatne tło strony */
+    color: var(--dark-navy);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.kontener {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 400px;
+    padding: 40px 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+h1 {
+    color: var(--dark-navy);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.card {
-  padding: 2em;
+.formularz {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 450px;
+    background: var(--light-grey);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-.read-the-docs {
-  color: #888;
+input[type="text"], select {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+input[type="text"]:focus {
+    border-color: var(--ocean-blue);
+    outline: none;
+}
+
+.alert {
+    color: var(--warning);
+    font-size: 0.85rem;
+    font-weight: bold;
+    background: #fdeaea;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.wynik {
+    background: var(--dark-navy);
+    color: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+button {
+    background-color: var(--ocean-blue);
+    color: var(--white);
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+button:hover:not(:disabled) {
+    background-color: #005fa3;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
 }
