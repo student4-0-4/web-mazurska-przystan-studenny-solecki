@@ -30,16 +30,16 @@ md
 (Opisz krok po kroku, w jaki sposób Twoja aplikacja wylicza cenę końcową.
 Możesz użyć pseudokodu lub wzoru matematycznego).
 
-* **Cena bazowa:** (jak jest ustalana?)
-* **Wpływ godzin:** (jak suwak zmienia cenę?)
-* **Opcje dodatkowe:** (jak doliczacie kapoki i instruktora?)
+* **Cena bazowa: kajak:20, rower: 35, omega: 150 ** (jak jest ustalana?)
+* **Wpływ godzin: za pomoca input range (minimum i maksimum za pomoca min i max) zapisuje przez on change i ustawia to jako godziny** (jak suwak zmienia cenę?)
+* **Opcje dodatkowe: za pomoca checkboxa i onchange zapisuje do odpowiednich zmiennych** (jak doliczacie kapoki i instruktora?)
 ---
 ## 5. Layout i Stylizacja (`Flexbox`)
 (Opisz, jakich właściwości `Flexbox` użyliście, aby formularz był responsywny i wyśrodkowany.
 Wymień co najmniej 3 właściwości CSS).
-1. `display: ...` - (opis zastosowania)
-2. `...` - (opis zastosowania)
-3. `...` - (opis zastosowania)
+1. `display: flex` - (automatycznie rozmieszcza elementy w srodku)
+2. `justify-content: center` - (wysrodkowuje rzecz)
+3. `flex-direction: column` - (zamienia na kolumny)
 ---
 ## 6. Wnioski z realizacji projektu (SDLC)
 (Krótka autorefleksja zespołu).
