@@ -68,7 +68,7 @@ const App: React.FC = () => {
 
                 <h2 className="wynik">{`Suma: ${liczCene()} zł`}</h2>
 
-                <button disabled={!regulamin || imie.length < 3}>Zarezerwuj</button>
+                <button disabled={!regulamin || imie.length < 3} onClick={() => alert(`Zarezerwowano ${sprzet} dla ${imie}. Do zapłaty zostało ${liczCene()} zł.`)}>Zarezerwuj</button>
             </div>
         </div>
     );

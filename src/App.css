@@ -6,6 +6,9 @@ body {
   display: flex;
   justify-content: center; /*wysrodkowanie*/
   align-content: center;
+    background-image: url('./zaglowka.jpg');
+    background-size: cover;
+    background-position: center
 }
 
 .kontener {
