@@ -2,19 +2,20 @@ md...
 # 📄 Dokumentacja Techniczna – Projekt "Mazurska Przystań"
 
 **Zespół:** [Jakub Studenny i Mateusz Solecki]
-**Klasa:** 3 Technikum
+**Klasa:** 3B Technikum
 **Data:** [16.03.2026r.]
 
 ---
 ## 1. Analiza wymagań klienta
 (Opisz własnymi słowami, jakie funkcjonalności musiały znaleźć się w aplikacji na podstawie e-maila od klienta).
-* ...
+* Pole do wpisanie imienia do rezerwacji, wybranie jednego sposrod trzech opcji, a jezeli byla to omega to alert o tym, ze trzeba miec patent zeglarski. Potrzebny byl suwak, ktory zmienia cene min 1h max 8h, oraz dodatkowe opcje do zaznaczenia. Nalezalo wybrac jedna sposrod metod platnosci.
 * ...
 
 ---
 ## 2. Architektura rozwiązania
 (Wyjaśnij, dlaczego zdecydowaliście się na jeden komponent App.ts i
  jak podzieliliście w nim kod na sekcje).
+ Nie bylo potrzeby robic dodatkowych plikow, projekt nie byl najciezszy, raczej chodzilo w nim o kalkulator i funkcjonalnosci. Dodalem .css dla wygladu i przejzystosci kodu, aby nie bylo wszystko w jednym pliku
 
 ---
 ## 3. Zarządzanie stanem (`useState`)
@@ -24,11 +25,21 @@ md...
 | :--- | :--- | :--- |
 | [np. name] | [np. string] | [np. Przechowuje imię klienta] |
 | | | |
-
+    const [imie, setImie] = useState<string>(''); - przechowuje imie klienta
+    const [sprzet, setSprzet] = useState<string>('kajak'); - przechowuje sprzet, ktory wybral uzytkownik (domyslny sprzet to kajak)
+    const [godziny, setGodziny] = useState<number>(1); - przechowuje liczbe godzin (domyslnie 1h)
+    const [kapok, setKapok] = useState<boolean>(false); - (przechowuje dane o dodatkowym wyborze(kapok), domyslnie jest on nie wybrany)
+    const [instruktor, setInstruktor] = useState<boolean>(false); - (przechowuje dane o dodatkowym wyborze(instruktor), domyslnie jest on nie wybrany)
+    const [platnosc, setPlatnosc] = useState<string>('karta'); - przechowuje dane o metodzie platnosci (domyslnie jest to karta)
+    const [regulamin, setRegulamin] = useState<boolean>(false); - przechowuje dane czy uzytkownik zaakceptowal regulamin (domyslnie nie)
 ---
 ## 4. Algorytm obliczania ceny
 (Opisz krok po kroku, w jaki sposób Twoja aplikacja wylicza cenę końcową.
 Możesz użyć pseudokodu lub wzoru matematycznego).
+suma = ceny[sprzet] * godziny;
+        if (instruktor) suma += 50 * godziny;
+        if (kapok) suma += 5;
+        return suma;
 
 * **Cena bazowa: kajak:20, rower: 35, omega: 150 ** (jak jest ustalana?)
 * **Wpływ godzin: za pomoca input range (minimum i maksimum za pomoca min i max) zapisuje przez on change i ustawia to jako godziny** (jak suwak zmienia cenę?)
